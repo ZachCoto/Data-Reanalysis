@@ -39,6 +39,6 @@ SP2<-Scalingplot2 + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 
 SP2
 
-![] (https://github.com/ZachCoto/Data-Reanalysis/blob/master/Recreation%20of%20Figure%202%20from%20Kamhi%20et%20al%202016.png)
+![](https://github.com/ZachCoto/Data-Reanalysis/blob/master/Recreation%20of%20Figure%202%20from%20Kamhi%20et%20al%202016.png)
 ```
 

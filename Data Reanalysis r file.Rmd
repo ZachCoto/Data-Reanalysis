@@ -2,7 +2,7 @@
 title: "Data reanalysis"
 output: html_document
 ---
-
+:to load data from a google sheet
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(googlesheets) #Go to google sheets
@@ -24,7 +24,9 @@ SP<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 
 SP
 ```
-```
+
+
+: to load data from an excel file on the desktop
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 require(readxl)

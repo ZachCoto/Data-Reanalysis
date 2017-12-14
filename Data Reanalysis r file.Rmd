@@ -1,0 +1,42 @@
+---
+title: "Data reanalysis"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(googlesheets) #Go to google sheets
+gs<- gs_title("COXdata")
+gs
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rs<-gs_read(ss=gs,ws="brain_bodymass")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+
+Scalingplot<-ggplot(rs, aes(x = log(estimated_body_mass_mg), y = log(brain_mass_µg), colour = species)) + geom_point()+ geom_smooth(method="lm", fill=NA)+ scale_color_manual(values = c("purple", "dark green"))
+
+SP<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)") 
+
+SP
+```
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(readxl)
+ds<-"C:/Users/--/Desktop/R data reanalysis/COX ms data for Dryad.xlsx"
+rs2<-read_excel(ds, sheet = 1)
+
+library(ggplot2)
+
+Scalingplot2<-ggplot(rs2, aes(x = log(estimated_body_mass_mg), y = log(brain_mass_µg), colour = species)) + geom_point()+ geom_smooth(method="lm", fill=NA)+ scale_color_manual(values = c("purple", "dark green"))
+
+SP2<-Scalingplot2 + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)") 
+
+SP2
+```
+

@@ -56,8 +56,8 @@ Scalingplot<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 
 Scalingplot
 ```
-![Figure 2](/ZachCoto/Data-Reanalysis/Recreation of Figure 2 from Kamhi et al 2016.png)
-
+![](./Figures/Recreation of Figure 2 from Kamhi et al 2016.png)
+![](./Images/Figure4ERplot.jpg)
 
 
 ## Figure 3(a): Box Plot of Relative Volumes of Brain Regions

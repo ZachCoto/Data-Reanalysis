@@ -56,7 +56,7 @@ Scalingplot<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 
 Scalingplot
 ```
-![](https://github.com/ZachCoto/Data-Reanalysis/Recreation of Figure 2 from Kamhi et al 2016.png)
+![Figure 2](/ZachCoto/Data-Reanalysis/Recreation of Figure 2 from Kamhi et al 2016.png)
 
 
 

@@ -74,7 +74,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(reshape2)
 bpd2 <- melt(bpd1,id.vars="species",measure.vars=c('OL/brain','AL/brain', 'MB-MC/brain','MB-LC/brain','MB-lobes/brain','CC/brain','SEZ/brain'))
 
-#species  variable  value
+#species    variable    value
 
 #Formica	OL/brain	0.101391919		
 #Formica	OL/brain	0.111509346		

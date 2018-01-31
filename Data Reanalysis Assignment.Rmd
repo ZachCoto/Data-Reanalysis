@@ -2,6 +2,9 @@
 title: "Data Reanalysis"
 output: html_document
 ---
+```{r setup, echo =FALSE}
+knitr::opts_chunk$set(cache = TRUE)
+```
 ##Overview of the Paper
 
 I will be ranalyzing data presented by Kamhi et al (2016): Social complexity influences brain investment and neural operation costs in ants. 
@@ -18,7 +21,6 @@ I will be recreating the authors' regression of brain size and body size for bot
 
 1) Require the readxl package and load the excel dataset. Here, this is done from the dataset loaded on your desktop. You can then use the dataset for making the figure by using the read_excel function.
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 require(readxl)
 ds<-"C:/Users/ZC/Desktop/Data-Reanalysis/COX ms data for Dryad.xlsx"
 rs2<-read_excel(ds, sheet = 1)
@@ -40,7 +42,6 @@ rs2$species <- factor(rs2$species, levels = c("species 3", "species 2","species 
 
 Fifth, manually add the proper labels using the xlab() and ylab() functions to your plot function
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 
 library(ggplot2)
 
@@ -56,13 +57,12 @@ Scalingplot<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 
 Scalingplot
 ```
-![]( ./Data-Reanalysis/Recreation of Figure 2 from Kamhi et al 2016.png )
+![](./Figures/Figure2.png)
 
 
 ##Figure 3(a): Box Plot of Relative Volumes of Brain Regions
 Again, make sure have the data set loaded in R using the readxl() function. The first box plot uses the second sheet in the data set (brain region volume), so input sheet=2.
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 require(readxl)
 ds<-"C:/Users/ZC/Desktop/Data-Reanalysis/COX ms data for Dryad.xlsx"
 bpd1<-read_excel(ds, sheet = 2)
@@ -70,7 +70,6 @@ bpd1<-read_excel(ds, sheet = 2)
 The Data need to be reorganized to for it to be displayed as in Figure 2. We can use the melt() function of the reshape2 package to do this. In melt(), indicate the data set to be used (here, bpd1), id.vars = how you want the data divided in the legend (here, species) and measure.vars = c(ordered factors in the y variable)(here, these are the different relative volumes of the brain regions). Note that the order that the factors are input is the order that they will show on the boxplot.
 
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 library(reshape2)
 bpd2 <- melt(bpd1,id.vars="species",measure.vars=c('OL/brain','AL/brain', 'MB-MC/brain','MB-LC/brain','MB-lobes/brain','CC/brain','SEZ/brain'))
 
@@ -90,16 +89,14 @@ bpd2 <- melt(bpd1,id.vars="species",measure.vars=c('OL/brain','AL/brain', 'MB-MC
 Now, the table is reorganized into 3 columns (species, variable and value). To start making the plot, load ggplot2, run the ggplot function on the melted data set (here, bpd2) and run the geom_boxplot(aes()) function with x = variable, y = value and color = species
 
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 plot1 <- ggplot(bpd2) +
       geom_boxplot(aes(x=variable, y=value, color=species))
 ```
-![](./Data-Reanalysis/Fig3Aincomplete.jpeg  )
+![](./Figures/Fig3Aincomplete.jpeg  )
 
 Using the following functions, you can easily modify the aesthetics of the box plot as they are shown in Figure 2A. 
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 #Modify the names of the factors 
 plot1<-plot1 + scale_x_discrete(labels = c('OL', 'AL', 'MB-MC', 'MB-LC', 'MB-Lobes', 'CC', 'SEZ'))
 
@@ -111,12 +108,11 @@ plot1<-plot1 + scale_color_manual(labels = c("F.subsericea", "O.smaragdina major
 plot1<-plot1 + theme(legend.text = element_text(colour="black", size = 10, face = "italic"))
 plot1
 ```
-![](./Data-Reanalysis/Fig3Acomplete.jpeg)
+![](./Figures/Fig3Acomplete.jpeg)
 
 Repeat the same set of codes for making the second boxplot with the exception of using sheet 3 and modifying the labels appropriately to recreate Figure 3B
 
 ```{r, eval=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 require(readxl)
 library(reshape2)
@@ -131,4 +127,4 @@ plot2<-plot2+ scale_color_manual(labels = c("F.subsericea", "O.smaragdina major"
 plot2<-plot2 + theme(legend.text = element_text(colour="black", size = 10, face = "italic"))
 plot2
 ```
-![](./Data-Reanalysis/Fig3B.jpeg)
+![](./Figures/Fig3B.jpeg)

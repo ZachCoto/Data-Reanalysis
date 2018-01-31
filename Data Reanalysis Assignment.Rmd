@@ -5,7 +5,7 @@ output: html_document
 ```{r setup, echo =FALSE}
 knitr::opts_chunk$set(cache = TRUE)
 ```
-##Overview of the Paper
+## Overview of the Paper
 
 I will be ranalyzing data presented by Kamhi et al (2016): Social complexity influences brain investment and neural operation costs in ants. 
 
@@ -60,7 +60,7 @@ Scalingplot
 ![](./Figures/Figure2.png)
 
 
-##Figure 3(a): Box Plot of Relative Volumes of Brain Regions
+## Figure 3(a): Box Plot of Relative Volumes of Brain Regions
 Again, make sure have the data set loaded in R using the readxl() function. The first box plot uses the second sheet in the data set (brain region volume), so input sheet=2.
 ```{r, eval=FALSE}
 require(readxl)

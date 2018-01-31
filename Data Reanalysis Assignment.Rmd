@@ -57,8 +57,6 @@ Scalingplot<-Scalingplot + xlab("ln(body mass(mg)") + ylab("ln(brain mass(ug)")
 Scalingplot
 ```
 ![](./Figures/Recreation of Figure 2 from Kamhi et al 2016.png)
-![](./Images/Figure4ERplot.jpg)
-
 
 ## Figure 3(a): Box Plot of Relative Volumes of Brain Regions
 Again, make sure have the data set loaded in R using the readxl() function. The first box plot uses the second sheet in the data set (brain region volume), so input sheet=2.
@@ -96,7 +94,7 @@ library(ggplot2)
 plot1 <- ggplot(bpd2) +
       geom_boxplot(aes(x=variable, y=value, color=species))
 ```
-![](/Data-Reanalysis/Fig3Aincomplete.jpeg  )
+![](./Figures/Fig3Aincomplete.jpeg  )
 
 Using the following functions, you can easily modify the aesthetics of the box plot as they are shown in Figure 2A. 
 ```{r, eval=FALSE}
@@ -112,7 +110,7 @@ plot1<-plot1 + scale_color_manual(labels = c("F.subsericea", "O.smaragdina major
 plot1<-plot1 + theme(legend.text = element_text(colour="black", size = 10, face = "italic"))
 plot1
 ```
-![](/Data-Reanalysis/Fig3Acomplete.jpeg)
+![](./Figures/Fig3Acomplete.jpeg)
 
 Repeat the same set of codes for making the second boxplot with the exception of using sheet 3 and modifying the labels appropriately to recreate Figure 3B
 
@@ -132,4 +130,4 @@ plot2<-plot2+ scale_color_manual(labels = c("F.subsericea", "O.smaragdina major"
 plot2<-plot2 + theme(legend.text = element_text(colour="black", size = 10, face = "italic"))
 plot2
 ```
-![](/Data-Reanalysis/Fig3B.jpeg)
+![](./Figures/Fig3B.jpeg)

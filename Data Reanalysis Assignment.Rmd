@@ -1,6 +1,8 @@
 ---
 title: "Data Reanalysis"
-output: html_document
+output:
+  word_document: default
+  html_document: default
 ---
 ```{r setup, echo =FALSE}
 knitr::opts_chunk$set(cache = TRUE)

@@ -2,7 +2,7 @@
 title: "Data Reanalysis"
 output: html_document
 ---
-##Overview of the Paper
+## Overview of the Paper
 
 I will be ranalyzing data presented by Kamhi et al (2016): Social complexity influences brain investment and neural operation costs in ants. 
 

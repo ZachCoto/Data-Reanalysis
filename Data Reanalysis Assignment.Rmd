@@ -59,7 +59,7 @@ Scalingplot
 ![]( ./Data-Reanalysis/Recreation of Figure 2 from Kamhi et al 2016.png )
 
 
-##Figure 3(a): Box Plot of Relative Volumes of Brain Regions
+## Figure 3(a): Box Plot of Relative Volumes of Brain Regions
 Again, make sure have the data set loaded in R using the readxl() function. The first box plot uses the second sheet in the data set (brain region volume), so input sheet=2.
 ```{r, eval=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
